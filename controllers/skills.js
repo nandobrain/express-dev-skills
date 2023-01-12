@@ -10,7 +10,8 @@ module.exports = {
 
 function index(req, res) {
     res.render('skills/index', {
-        skills: Skill.getAll()
+        skills: Skill.getAll(),
+        title: 'Mad Skills'
     });
 }
 

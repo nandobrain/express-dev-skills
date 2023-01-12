@@ -24,7 +24,7 @@ function getOne(id) {
 }
 
 function create(skill) {
-    skill.id = Date.now() % 1000000
+    skill.id = Date.now() % 100000
     skill.done = false
     skills.push(skill)
 }
