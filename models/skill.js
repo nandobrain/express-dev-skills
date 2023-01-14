@@ -9,7 +9,8 @@ module.exports = {
     getAll,
     getOne,
     create,
-    deleteOne
+    deleteOne,
+    updateOne
 };
 
 function getAll() {
@@ -32,5 +33,17 @@ function create(skill) {
 function deleteOne(id) {
     id = parseInt(id)
     const idx = skills.findIndex(skill => skill.id == id)
-    skill.splice(idx, 1)
+    skills.splice(idx, 1)
 }
+
+function updateOne(formData, id) {
+    id = parseInt(id)
+    const Skill = skills.find(skill => skill.id === id)
+    skills.skill = formData.skill
+    if(formData.done) {
+        skills.done = true
+    } else {
+        skills.done = false
+    }
+}
+
